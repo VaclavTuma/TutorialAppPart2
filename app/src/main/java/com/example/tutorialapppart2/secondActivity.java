@@ -1,6 +1,7 @@
 package com.example.tutorialapppart2;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +21,13 @@ public class secondActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        if (getIntent().hasExtra("dont.remember")){
+            TextView tv = (TextView) findViewById(R.id.textView);
+            String text = getIntent().getExtras().getString("dont.remember");
+            tv.setText(text);
+        }
+
+
     }
 }

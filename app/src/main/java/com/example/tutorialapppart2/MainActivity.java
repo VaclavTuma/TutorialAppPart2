@@ -24,12 +24,14 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        // try to launch second activity with text there
         Button secondActivityBtn = (Button) findViewById(R.id.secondActivityBtn);
         secondActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent srartIntent = new Intent(getApplicationContext(),secondActivity.class);
-                // show how to get info into another activity
+                Intent startIntent = new Intent(getApplicationContext(), secondActivity.class);
+                startIntent.putExtra("dont.remember","KSI"); // put info to bundle and send it to other activity, it is done with key value pairs
+                startActivity(startIntent);
             }
         });
 
