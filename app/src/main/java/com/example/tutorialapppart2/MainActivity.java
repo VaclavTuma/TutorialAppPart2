@@ -1,6 +1,7 @@
 package com.example.tutorialapppart2;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // try to launch second activity with text there
+        // try to launch second activity with text there inside my app
         Button secondActivityBtn = (Button) findViewById(R.id.secondActivityBtn);
         secondActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +35,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+
+        // launch activity outside of my app, for example to certain website
+        Button googleBtn = (Button) findViewById(R.id.googleBtn);
+        googleBtn.setOnClickListener(new View.OnClickListener() { // listener to clicking the google button and what will happen after
+            @Override
+            public void onClick(View v) {
+                String google = "https://www.google.com/";
+                //String google = "www.google.com";
+                Uri webaddress = Uri.parse(google);
+
+                Intent gotoGoogle = new Intent(Intent.ACTION_VIEW, webaddress);
+                startActivity(gotoGoogle);
+
+                //if (gotoGoogle.getPackage(getPackageManager()) != null){
+                  //  startActivity(gotoGoogle);
+                //}
+            }
+        });
+
 
     }
 }
