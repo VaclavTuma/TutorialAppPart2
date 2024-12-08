@@ -42,15 +42,15 @@ public class MainActivity extends AppCompatActivity {
         googleBtn.setOnClickListener(new View.OnClickListener() { // listener to clicking the google button and what will happen after
             @Override
             public void onClick(View v) {
-                String google = "https://www.google.com/";
+                String google = "https://www.techarena.cz/";
                 //String google = "www.google.com";
                 Uri webaddress = Uri.parse(google);
 
                 Intent gotoGoogle = new Intent(Intent.ACTION_VIEW, webaddress);
                 startActivity(gotoGoogle);
 
-                //if (gotoGoogle.getPackage(getPackageManager()) != null){
-                  //  startActivity(gotoGoogle);
+                //if (gotoGoogle.resolveActivity(getPackageManager()) != null){
+                  //startActivity(gotoGoogle);
                 //}
             }
         });
