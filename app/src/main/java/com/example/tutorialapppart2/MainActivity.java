@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         // launch activity outside of my app, for example to certain website
         Button googleBtn = (Button) findViewById(R.id.googleBtn);
         googleBtn.setOnClickListener(new View.OnClickListener() { // listener to clicking the google button and what will happen after
